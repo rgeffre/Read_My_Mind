@@ -1,18 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
 
-//VARIABLES
-//====================================
+<head>
+  <meta charset="UTF-8">
+  <title>Renee's Psychic Game</title>
+</head>
 
-   // Creates an array that lists out all of the options.
+<body>
+
+  <div id="game">
+    <p>"Guess What Letter I am Thinking Of</p>
+  </div>
+
+  <script type="text/javascript">
+    // Creates an array that lists out all of the options.
     var computerChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y"];
 
-
-   // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
-        var html =
-          "<p>You chose: " + userGuess + "</p>" +
-          "<p>The computer chose: " + computerGuess + "</p>" +
-          "<p>wins: " + wins + "</p>" +
-          "<p>losses: " + losses + "</p>" +
-          "<p>ties: " + ties + "</p>";
+    // Creating variables to hold the number of wins, losses, guesses made, guesses left
+    var wins = 0;
+    var losses = 0;
+    var guessesMade = 0;
+    var guessesLeft = 0
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
@@ -44,7 +52,20 @@
           ties++;
         }
 
-       // Set the inner HTML contents of the #game div to our html string 
+        // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+        var html =
+          "<p>You chose: " + userGuess + "</p>" +
+          "<p>The computer chose: " + computerGuess + "</p>" +
+          "<p>wins: " + wins + "</p>" +
+          "<p>losses: " + losses + "</p>" +
+          "<p>ties: " + ties + "</p>";
+
+        // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
       }
     };
+  </script>
+
+</body>
+
+</html>
